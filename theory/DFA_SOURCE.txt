@@ -1,0 +1,47 @@
+
+DFA - Deterministic Finite Automata
+
+**Given an input string x,
+    where x C U
+    and  U = {0,1}
+
+
+1). Create a DFA that recognizes a binary string that contains the input "1001" somewhere within its contents.
+
+
+[State Diagram]__________________________________________________________[State Diagram]
+
+
+    ---------------------------0----------------------------
+    !       -----1--------                                 !
+    !       v            !                                 !
+    !      |0|           !                                 !
+    --->  ( S ) ---1---> ( p1 ) ---0---> ( p2 ) ---0---> ( p3 ) ---1---> ( F ) ----!
+           ^                               !                               ^       !
+           !---------------1----------------                               !--0,1--!
+
+
+[State Diagram]__________________________________________________________[State Diagram]
+
+
+
+[Data Structure - State Diagram]________________________[Data Structure - State Diagram]
+** The data structure for the state diagram for a DFA will be a nested array.
+		SD = [state1,state2,state3]
+	*The states within the state diagram will also be represented as arrays.
+	*These arrays will contail 2 elements: next state on 0, next state on 1
+		state1 = [p2, p3]
+	*ex. We are currently in state p1.  If we see a 0 we move to p2, if we see a 1 we move to p3.
+
+	For the above DFA the state diagram would be as follows
+
+	[[0,1],[2,0],[3,0],[0,4],[4,4]]
+
+[Data Structure - State Diagram]________________________[Data Structure - State Diagram]
+
+
+var DFA = function(stateDiagram, input) {
+	
+}
+
+
